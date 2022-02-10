@@ -4,7 +4,7 @@ const ArticleInfo = require('./src/model/BlogDB');
 const userdata = require('./src/model/User') ;
 const path = require ('path');
 
-
+const PORT = process.env.PORT || 5000
 
 const app = express();
 app.use(cors());
@@ -58,6 +58,6 @@ app.get('/*', function(req,res) {
 });
 
 // Port number
-app.listen(5001, () => {
-    console.log("Listening on port 5001");
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT} `);
 })
